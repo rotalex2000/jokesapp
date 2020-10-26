@@ -16,11 +16,39 @@ class MainViewModel @Inject constructor(
     fun getJokes(): LiveData<Jokes> = _jokes
 
     init {
-        loadJokes("Any", "1")
+        loadJokes(
+            "Any",
+            "en",
+            "",
+            "json",
+            "single",
+            "",
+            "",
+            "4"
+        )
     }
 
-    private fun loadJokes(categories: String, amount: String) {
-        getJokesUseCase.run(categories, amount, ::onLoadJokesReady)
+    private fun loadJokes(
+        categories: String,
+        lang: String,
+        blacklistFlags: String,
+        format: String,
+        type: String,
+        contains: String,
+        idRange: String,
+        amount: String
+    ) {
+        getJokesUseCase.run(
+            categories,
+            lang,
+            blacklistFlags,
+            format,
+            type,
+            contains,
+            idRange,
+            amount,
+            ::onLoadJokesReady
+        )
     }
 
     private fun onLoadJokesReady(jokesObject: Jokes) {

@@ -10,5 +10,23 @@ class JokeRepository @Inject constructor(
     private val jokeRemoteDataSource: JokeRemoteDataSource
 ) {
 
-    suspend fun getJokesRemote(categories: String, amount: String) = jokeRemoteDataSource.getJokes(categories, amount = amount)
+    suspend fun getJokesRemote(
+        categories: String,
+        lang: String,
+        blacklistFlags: String,
+        format: String,
+        type: String,
+        contains: String,
+        idRange: String,
+        amount: String
+    ) = jokeRemoteDataSource.getJokes(
+        categories,
+        lang,
+        blacklistFlags,
+        format,
+        type,
+        contains,
+        idRange,
+        amount
+    )
 }
