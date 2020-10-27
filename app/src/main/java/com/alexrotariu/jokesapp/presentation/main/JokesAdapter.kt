@@ -36,6 +36,8 @@ class JokesAdapter(private val jokesList: List<Joke>) : RecyclerView.Adapter<Jok
             if (joke.flags.racist) itemView.mchvFlagRac.visibility = View.VISIBLE
             if (joke.flags.sexist) itemView.mchvFlagSex.visibility = View.VISIBLE
 
+            itemView.mcvJoke.setOnClickListener {
+            }
         }
     }
 }

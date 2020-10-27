@@ -26,7 +26,7 @@ class MainViewModel @Inject constructor(
             "single",
             "",
             "",
-            "1"
+            "10"
         )
     }
 
