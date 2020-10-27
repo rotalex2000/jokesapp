@@ -4,5 +4,5 @@ import android.app.Application
 
 class JokesApp : Application() {
 
-    val appComponent = DaggerAppComponent.create()
+    val appComponent: AppComponent = DaggerAppComponent.create()
 }

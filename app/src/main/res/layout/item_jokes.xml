@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvJoke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/colorPrimary"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:id="@+id/tvJoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joke"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="category"
+                        app:chipBackgroundColor="@color/colorPrimary"
+                        android:textColor="@android:color/white"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvFlagNSFW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@color/orange"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        app:chipIconTint="@android:color/white"
+                        app:chipIcon="@drawable/ic_flag_white"
+                        android:text="nsfw"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvFlagRel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="religious"
+                        app:chipBackgroundColor="@color/blue"
+                        android:textColor="@android:color/white"
+                        app:chipIconTint="@android:color/white"
+                        app:chipIcon="@drawable/ic_flag_white"
+                        android:visibility="gone"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvFlagPol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="political"
+                        app:chipBackgroundColor="@color/red"
+                        android:textColor="@android:color/white"
+                        app:chipIconTint="@android:color/white"
+                        app:chipIcon="@drawable/ic_flag_white"
+                        android:visibility="gone"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvFlagRac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="racist"
+                        app:chipBackgroundColor="@color/black"
+                        android:textColor="@android:color/white"
+                        app:chipIconTint="@android:color/white"
+                        app:chipIcon="@drawable/ic_flag_white"
+                        android:visibility="gone"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/mchvFlagSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sexist"
+                        app:chipBackgroundColor="@color/purple"
+                        android:textColor="@android:color/white"
+                        app:chipIconTint="@android:color/white"
+                        app:chipIcon="@drawable/ic_flag_white"
+                        android:visibility="gone"
+                        />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

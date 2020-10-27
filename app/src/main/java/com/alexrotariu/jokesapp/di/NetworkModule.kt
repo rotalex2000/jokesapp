@@ -16,9 +16,4 @@ class NetworkModule {
     fun provideRetrofitService(): Retrofit {
         return APIClient.instance.retrofit
     }
-
-//    @Provides
-//    fun provideJokesApiService(jokesAPIService: JokesAPIService): JokesAPIService {
-//        return provideRetrofitService().create(JokesAPIService::class.java)
-//    }
 }

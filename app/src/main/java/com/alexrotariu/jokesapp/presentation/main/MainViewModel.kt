@@ -7,7 +7,9 @@ import com.alexrotariu.jokesapp.data.network.repositories.JokeRepository
 import com.alexrotariu.jokesapp.domain.models.Jokes
 import com.alexrotariu.jokesapp.domain.usecases.GetJokesUseCase
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class MainViewModel @Inject constructor(
     private val getJokesUseCase: GetJokesUseCase
 ) {
@@ -24,11 +26,11 @@ class MainViewModel @Inject constructor(
             "single",
             "",
             "",
-            "4"
+            "1"
         )
     }
 
-    private fun loadJokes(
+    fun loadJokes(
         categories: String,
         lang: String,
         blacklistFlags: String,
