@@ -17,16 +17,27 @@ class MainViewModel @Inject constructor(
     private val _jokes: MutableLiveData<Jokes> = MutableLiveData()
     fun getJokes(): LiveData<Jokes> = _jokes
 
+    val filters: MutableList<String> = mutableListOf(
+        "Any",
+        "en",
+        "",
+        "json",
+        "single",
+        "",
+        "",
+        "10"
+    )
+
     init {
         loadJokes(
-            "Any",
-            "en",
-            "",
-            "json",
-            "single",
-            "",
-            "",
-            "10"
+            filters[0],
+            filters[1],
+            filters[2],
+            filters[3],
+            filters[4],
+            filters[5],
+            filters[6],
+            filters[7]
         )
     }
 

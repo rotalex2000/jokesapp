@@ -3,6 +3,9 @@ package com.alexrotariu.jokesapp.presentation.main
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -29,8 +32,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(toolbar)
+
         setOnClickListeners()
         setupObservers()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        if (id == R.id.action_refresh) {
+            mainViewModel.loadJokes(
+                mainViewModel.filters[0],
+                mainViewModel.filters[1],
+                mainViewModel.filters[2],
+                mainViewModel.filters[3],
+                mainViewModel.filters[4],
+                mainViewModel.filters[5],
+                mainViewModel.filters[6],
+                mainViewModel.filters[7]
+            )
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setupObservers() {
@@ -70,15 +100,19 @@ class MainActivity : AppCompatActivity() {
             alertDialog.dismiss()
             val categories = categories[dialogView.npCategory.value]
             val amount = dialogView.npAmount.value.toString()
+
+            mainViewModel.filters[0] = categories
+            mainViewModel.filters[7] = amount
+
             mainViewModel.loadJokes(
-                categories,
-                "en",
-                "",
-                "json",
-                "single",
-                "",
-                "",
-                amount
+                mainViewModel.filters[0],
+                mainViewModel.filters[1],
+                mainViewModel.filters[2],
+                mainViewModel.filters[3],
+                mainViewModel.filters[4],
+                mainViewModel.filters[5],
+                mainViewModel.filters[6],
+                mainViewModel.filters[7]
             )
         }
 
