@@ -2,21 +2,21 @@ package com.alexrotariu.jokesapp.presentation.main
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.activity.viewModels
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexrotariu.jokesapp.R
 import com.alexrotariu.jokesapp.di.JokesApp
 import com.alexrotariu.jokesapp.domain.models.Categories
 import com.alexrotariu.jokesapp.domain.models.Jokes
+import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.dialog_filter_jokes.view.*
 import javax.inject.Inject
+import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,13 +34,21 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
+//        app_bar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+//            if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+//                // Collapsed
+//            } else {
+//                // Expanded
+//            }
+//        })
+
         setOnClickListeners()
         setupObservers()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
